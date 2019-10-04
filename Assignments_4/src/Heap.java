@@ -50,5 +50,12 @@ public class Heap {
     Pair get_max(){
         return array_tree[1];
     }
-    
+
+    Pair extract_max(){
+        Pair max = array_tree[1];
+        array_tree[1] = array_tree[heap_size--];
+        bulid_max_heap();
+        return max;
+    }
+
 }
