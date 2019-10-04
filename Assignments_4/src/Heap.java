@@ -8,5 +8,16 @@ public class Heap {
         this.array_tree = array;
     }
 
+    
+    int get_parent_index(int i){
+        return i/2;
+    }
 
+    int get_left_child_index(int i){
+        return 2*i;
+    }
+
+    int get_rigth_child_index(int i){
+        return 2*i+1;
+    }
 }
