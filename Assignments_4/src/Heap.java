@@ -35,7 +35,6 @@ public class Heap {
         }
     }
 
-    
     int get_parent_index(int i){
         return i/2;
     }
@@ -47,4 +46,9 @@ public class Heap {
     int get_rigth_child_index(int i){
         return 2*i+1;
     }
+
+    Pair get_max(){
+        return array_tree[1];
+    }
+    
 }
