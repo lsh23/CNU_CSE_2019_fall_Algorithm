@@ -58,4 +58,15 @@ public class Heap {
         return max;
     }
 
+    void insert(Pair pair){
+        heap_size++;
+        if(heap_size==array_tree.length){
+            Pair[] new_array_tree = new Pair[array_tree.length*2];
+            System.arraycopy(array_tree,1,new_array_tree,1,array_tree.length);
+            array_tree = new_array_tree;
+        }
+        array_tree[heap_size] = pair;
+        bulid_max_heap();
+    }
+    
 }
