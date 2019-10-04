@@ -78,5 +78,16 @@ public class Heap {
         }
     }
 
-
+    boolean delete(int k){
+        boolean is_exist = false;
+        for(int i = 1; i<heap_size; i++){
+            if(array_tree[i].get_key()==k){
+                array_tree[i] = array_tree[heap_size--];
+                bulid_max_heap();
+                is_exist = true;
+            }
+        }
+        return is_exist;
+    }
+    
 }
