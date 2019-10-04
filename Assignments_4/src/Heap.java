@@ -68,5 +68,15 @@ public class Heap {
         array_tree[heap_size] = pair;
         bulid_max_heap();
     }
-    
+
+    void increase_key(int key,int k){
+        for(int i = 1; i<=heap_size; i++){
+            if(array_tree[i].get_key()==key){
+                array_tree[i].set_key(k);
+                bulid_max_heap();
+            }
+        }
+    }
+
+
 }
