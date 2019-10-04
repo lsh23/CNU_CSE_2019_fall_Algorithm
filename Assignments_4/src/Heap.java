@@ -89,5 +89,14 @@ public class Heap {
         }
         return is_exist;
     }
-    
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("["+array_tree[1].toString());
+        for(int i = 2 ; i <= heap_size ; i++){
+            sb.append(","+array_tree[i].toString());
+        }
+        sb.append("]");
+        return sb.toString();
+    }
 }
