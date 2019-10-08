@@ -92,11 +92,10 @@ public class Heap {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("["+array_tree[1].toString());
+        StringBuilder sb = new StringBuilder(array_tree[1].toString()+"\n");
         for(int i = 2 ; i <= heap_size ; i++){
-            sb.append(","+array_tree[i].toString());
+            sb.append(array_tree[i].toString()+"\n");
         }
-        sb.append("]");
         return sb.toString();
     }
 }
