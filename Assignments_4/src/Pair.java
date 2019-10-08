@@ -17,6 +17,6 @@ public class Pair {
     }
     @Override
     public java.lang.String toString() {
-        return "("+key+")";
+        return key+", "+value;
     }
 }
