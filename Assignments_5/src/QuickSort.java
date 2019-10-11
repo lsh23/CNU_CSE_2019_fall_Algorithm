@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Random;
 
 public class QuickSort {
 
@@ -25,6 +26,11 @@ public class QuickSort {
     }
 
     public int[] quickSort(int[] array, int p , int r){
+        if(p<r){
+            int q = partition(array,p,r);
+            quickSort(array,p,q-1);
+            quickSort(array,q+1,r);
+        }
         return array;
     }
 
