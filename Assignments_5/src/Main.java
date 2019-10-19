@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        int[] array;
+        int[] array = new int[1];
         try{
             //파일 객체 생성
             File file = new File("data06.txt");
@@ -23,11 +23,20 @@ public class Main {
         }
 
         QuickSort quickSort = new QuickSort();
-//        array = quickSort.quickSort(array,p,r);
-//        rdSotredArray = quickSort.randomizedPartition(array.p,r);
 
-//        fileWrite(array,false);
-//        fileWrite(rdSotredArray,true);
+        long startTime = System.nanoTime();
+        int[] quickSorted_array = quickSort.quickSort(array,0,array.length-1);
+        long estimatedTime = System.nanoTime() - startTime;
+
+        System.out.println("QuickSort 걸린 시간 : " + estimatedTime/1000000000.0 + " milli seconds");
+        startTime = System.nanoTime();
+        int[] randomQuickSorted_array = quickSort.quickSort_withRandom(array,0,array.length-1);
+        estimatedTime = System.nanoTime() - startTime;
+
+        System.out.println("Randomly QuickSort걸린 시간 : " + estimatedTime/1000000000.0 + " milli seconds");
+
+        fileWrite(quickSorted_array,false);
+        fileWrite(randomQuickSorted_array,true);
 
     }
 
@@ -37,7 +46,7 @@ public class Main {
         if(isRandom) file_name = "data6_quickRandom.txt";
         else file_name = "data6_quick.txt";
 
-        File file = new File("test1.txt");
+        File file = new File(file_name);
         FileWriter writer = null;
         BufferedWriter bWriter = null;
 
