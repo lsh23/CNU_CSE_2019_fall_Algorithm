@@ -3,6 +3,8 @@ import java.util.Random;
 
 public class QuickSort {
 
+    static Random random = new Random();
+
     public int partition(int[] array, int p , int r){
         int x = array[r];
         int i = p-1;
@@ -22,7 +24,12 @@ public class QuickSort {
     }
 
     public int randomizedPartition(int[] array, int p, int r){
-        return 0;
+        int i = random.nextInt(r-p)+p;
+        // i를 [p,r) 인 범위에서 랜덤적으로 선택
+        int tmp = array[i];
+        array[i] = array[r];
+        array[r] = tmp;
+        return partition(array,p,r);
     }
 
     public int[] quickSort(int[] array, int p , int r){
@@ -34,7 +41,13 @@ public class QuickSort {
         return array;
     }
 
-    public int[] quickSort_withRandom(int[] array, int p , int r){
+    public int[] quickSort_withRandom(int[] array, int p , int r)
+    {
+        if(p<r){
+            int q = randomizedPartition(array,p,r);
+            quickSort_withRandom(array,p,q-1);
+            quickSort_withRandom(array,q+1,r);
+        }
         return array;
     }
 
