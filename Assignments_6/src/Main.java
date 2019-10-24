@@ -16,7 +16,7 @@ public class Main {
             //입력 버퍼 생성
             BufferedReader bufReader = new BufferedReader(filereader);
             String line = "";
-            String[] strArray = bufReader.readLine().split(",");
+            String[] strArray = bufReader.readLine().split(", ");
             a = Arrays.asList(strArray).stream().mapToInt(x -> Integer.parseInt(x)).toArray();
             bufReader.close();
         } catch (FileNotFoundException e) {
@@ -33,7 +33,7 @@ public class Main {
             //입력 버퍼 생성
             BufferedReader bufReader = new BufferedReader(filereader);
             String line = "";
-            String[] strArray = bufReader.readLine().split(",");
+            String[] strArray = bufReader.readLine().split(", ");
             b = Arrays.asList(strArray).stream().mapToInt(x -> Integer.parseInt(x)).toArray();
             bufReader.close();
         } catch (FileNotFoundException e) {
