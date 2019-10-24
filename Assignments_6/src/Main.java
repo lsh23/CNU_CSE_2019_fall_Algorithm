@@ -42,6 +42,7 @@ public class Main {
             System.out.println(e);
         }
 
+        System.out.println(DataBaseSearch.twoSameLengthArrayMedianSearch(a,b));
 
     }
 
